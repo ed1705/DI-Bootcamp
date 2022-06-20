@@ -1,0 +1,42 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.row1 div {
+	display: inline-block;
+	width: 20vw;
+	position: relative;
+	top: 20px;
+	left: 0;
+}
+.row1 {
+	width: 100vw;
+	height: 20vh;
+	text-align: center;
+}
+
+img {
+	max-height:100%; max-width:100%;
+	
+}
+
+p {
+	font-size: 16px;
+}
+
+.left {
+	height: 100%;
+}
+
+.price {
+	font-size: 1.1em;
+	color: darkseagreen;
+	font-weight: bold;
+}
+.oldprice {
+	font-size: 0.7em;
+	
+	text-decoration: line-through;
+}
