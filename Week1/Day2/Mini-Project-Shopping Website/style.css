@@ -1,0 +1,50 @@
+
+	
+* {
+	box-sizing: border-box;
+}
+.navigation-bar {
+	background-color: black;
+	color: white;
+	font-size: 20px;
+	position: relative;
+	height: 9vh;
+} 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+li a {
+  margin: 0 auto;
+ float: right;
+  font-size: 1.2em;
+ text-transform: uppercase;
+ text-align: center;
+ margin: 1.4em;
+ text-decoration: none;
+ color: white;
+}
+
+
+i {
+	
+	color: white;
+	position: absolute;
+	left:10%;
+	top: 50%;
+}
+
+
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
