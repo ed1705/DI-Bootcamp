@@ -1,0 +1,89 @@
+/*GENERAL CSS*/
+
+div {
+    text-align: center;
+    color: black;
+    font-size: 1.5em;
+}
+
+.greenbox {
+    background-color: #A4E6A4;
+}
+
+.purplebox {
+    background-color: #CEAAF0;
+}
+
+.pinkbox{
+    background-color: #F288D5;
+}
+
+.bluebox{
+    background-color: #438EEA;
+}
+
+.yellowbox{
+    background-color: #F4ED79;
+}
+
+.redbox{
+    background-color: #F8394F;
+}
+
+.redbox7{
+    background-color: #F8394F;
+}
+
+/* -------------------- */
+
+/*on the parent*/
+.sectiongrid{
+    border: 1px solid black;
+    background-color:gainsboro;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px 30px;
+
+    padding: 1rem;
+}
+
+.redbox7 {
+    grid-column: 1/span 2;
+  
+}
+/*
+.green_g {
+    /* grid-column : in which column is starts/how many columns it takes 
+    grid-column: 1/span 2;
+}
+
+.bluebox {
+    grid-column:  2/span 2;
+    grid-row: 2/span 2;
+}
+
+.pinkbox {
+    grid-row: 2/span 2;
+
+}
+
+.yellowbox{
+    grid-column:  1/span 2;
+}
+
+
+
+.rowone {
+    grid-column: 1/span 1;
+}
+
+.rowtwo {
+    grid-column: 2/span 3;
+}
+
+
+
+.rowtwo .rowone {
+    height: 20%;
+}*/

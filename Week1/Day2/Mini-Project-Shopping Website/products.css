@@ -7,10 +7,11 @@
 .row1 div {
 	display: inline-block;
 	width: 20vw;
-	position: relative;
+
 	top: 20px;
 	left: 0;
 }
+
 .row1 {
 	width: 100vw;
 	height: 20vh;
