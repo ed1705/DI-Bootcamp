@@ -1,0 +1,43 @@
+* {
+	box-sizing: border-box;
+
+}
+
+
+body {
+	display: grid;
+	grid-template-columns: 1fr 6fr 1fr;
+	height: 70vh;
+}
+
+div {
+	/*border: darkred 3px solid;*/
+}
+.container-left, .container-right {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.container-middle {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.box-left, .box-right , .box-m {
+	border: black 1px solid;
+	background-color: yellow;
+	height: 10rem;
+	width: 10rem;
+
+
+	
+
+}
+.container-left .container-right .container-middle {
+
+}
