@@ -1,0 +1,96 @@
+* { 
+box-sizing: border-box;
+}
+
+body {
+	 margin: auto 0;
+	border: black 2px solid;
+
+}
+
+header {
+border: red 2px solid;
+}
+
+.top {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+    justify-content: flex-start;
+	align-items: flex-start;
+	height: 30vh;
+	width: 90vw;
+	gap: 0.3em;
+	flex-wrap: wrap;
+	margin-left: 20px;
+
+}
+.top img {
+	/*margin-left: auto;*/
+	height: 17vw;
+	align-self: flex-end;
+	position: absolute;
+	top: 2rem;
+	right: 3.1rem;
+}
+
+.firstn {
+ margin: 5rem 0rem 0rem 1rem;
+ padding: 0;
+ font-size: 3rem;
+ font-weight: normal;
+ text-transform: uppercase;
+}
+
+.bold {
+ margin: 0rem 0rem 0rem 1rem;
+ padding: 0;
+ font-size: 3rem;
+ font-weight: bold;
+ text-transform: uppercase;
+}
+span.underlined {
+  border-bottom: 1px solid goldenrod;
+}
+span.singleunderline {
+  border-bottom: 1px dashed black;
+}
+
+.line1 {
+ margin: 0rem 2rem 0rem 1rem;
+ padding: 0;
+ font-size: 1rem;
+ font-weight: normal;
+ text-transform: uppercase;
+}
+
+h4 {
+ margin: 0rem 2rem 0rem 1rem;
+ padding: 0;
+ font-size: 1rem;
+ font-weight: normal;
+ text-transform: uppercase;
+}
+main {
+display: grid;
+border: blue 2px solid;
+height: 70vh;
+gap: 1.5rem;
+grid-template-columns: 1fr 2fr;
+}
+
+.contact {
+	border: purple 2px solid;
+}
+
+.profile {
+	border: purple 2px solid;
+}
+
+.education {
+	border: purple 2px solid;
+}
+
+.experience {
+	border: purple 2px solid;
+}
