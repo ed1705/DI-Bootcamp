@@ -227,7 +227,7 @@ let test = 123;
 
 
 let mypets = ['cat','dog','fish','rabbit','cow'];
-console.log(mypets[1])
+console.log(mypets[1]);
 
 
 

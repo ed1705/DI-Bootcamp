@@ -56,8 +56,8 @@ console.log(myWatchedSeries);
 // Hint : Should you create another variable to hold the temperature in fahrenheit? (ie. point 2)
 // Hint: To convert a temperature from celsius to fahrenheit : Divide it by 5, then multiply it by 9, then add 32
 let celsiusTemp = [30];
-let fahrenheitTemp = [(celsiusTemp/5*9)+32]
-console.log(`${celsiusTemp}°C is ${fahrenheitTemp}°F`)
+let fahrenheitTemp = [(celsiusTemp/5*9)+32];
+console.log(`${celsiusTemp}°C is ${fahrenheitTemp}°F`);
 
 
 
@@ -97,7 +97,8 @@ console.log(`${celsiusTemp}°C is ${fahrenheitTemp}°F`)
 // What is the value of c?
 undefined
 // Analyse the code below, what will be the outcome?
-console.log(3 + 4 + '5'); = 75
+console.log(3 + 4 + '5'); 
+= 75
 
 // Exercise 5 : Guess The Answers #2
 // Instructions
