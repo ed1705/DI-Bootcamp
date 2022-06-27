@@ -22,8 +22,8 @@ console.log(wordBad);
 if (wordBad > wordNot) {
 	let str = sentence.substr(13,12);
 	let goodSent = sentence.replace(str, "good");
-	console.log(goodSent)
+	console.log(goodSent);
 } else {
-	console.log(sentence)
+	console.log(sentence);
 }
 
