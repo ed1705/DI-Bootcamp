@@ -84,7 +84,7 @@ if (users.length === 0) {
 	else if (users.length === 2){
 		console.log(`${users[0]} and ${users[1]} is online`);
 	}
-    else if (users.length > 2){
+    else  {
 		console.log(`${users[0]} and ${users[1]} and ${users.length-2} more are online`);
 	}
 
