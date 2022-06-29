@@ -12,43 +12,43 @@
 // let colors = ["blue", "red", "yellow"];
 // let favoriteColor = colors[1]
 
-// let tshirt1 = {
-// 	size : "M",
-// 	price: 12,
-// }
+let tshirt1 = {
+	size : "M",
+	price: 12,
+}
 
-// // syntax to retrieve data from an object
-// // dot notation
-// // objectName.keyName
-// // square bracket notation
-// // objectName["keyName"]
+// syntax to retrieve data from an object
+// dot notation
+// objectName.keyName
+// square bracket notation
+// objectName["keyName"]
 
-// let priceShirt = tshirt1.price;
-// let priceShirtOther = tshirt1["price"];
+let priceShirt = tshirt1.price;
+let priceShirtOther = tshirt1["price"];
 
-// // console.log(priceShirt) //12
-// // console.log(priceShirtOther) //12
-// // console.log(tshirt1.price, tshirt1.size)
+// console.log(priceShirt) //12
+// console.log(priceShirtOther) //12
+// console.log(tshirt1.price, tshirt1.size)
 
-// // add the color of the shirt
-// tshirt1["color"] = "red";
-// // console.log(tshirt1)
-
-// // modify a value
-// tshirt1["size"] = "L";
+// add the color of the shirt
+tshirt1["color"] = "red";
 // console.log(tshirt1)
 
-// let family = {
-// 	lastname : "Smith",
-// 	members : 4,
-// 	hasADog : true,
-// 	nameOfMembers : ["Lea", "David", "Mom", "Dad"],
-// 	friends : {
-// 		name : "Jack",
-// 		lastname : "ABC",
-// 		age : 12,
-// 		favoriteColors : ["blue", "red"],
-// 	}
+// modify a value
+tshirt1["size"] = "L";
+console.log(tshirt1)
+
+let family = {
+	lastname : "Smith",
+	members : 4,
+	hasADog : true,
+	nameOfMembers : ["Lea", "David", "Mom", "Dad"],
+	friends : {
+		name : "Jack",
+		lastname : "ABC",
+		age : 12,
+		favoriteColors : ["blue", "red"],
+	}
 // };
 
 // //1 Name of the family
