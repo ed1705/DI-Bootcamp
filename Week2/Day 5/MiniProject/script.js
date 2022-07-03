@@ -5,8 +5,8 @@
   if (confirm == false) {
     prompt ("No problem, Goodbye");
   } else {
-   let userNumber = Number(prompt("enter a number between 0 and 10")); 
-       // userNumber = parseInt();
+   let userNumber = +prompt("enter a number between 0 and 10"); 
+       // userNumber = parseInt();  YESSS THIS ONE
        // console.log(userNumber);
     if (isNaN(userNumber)) {
        
@@ -32,45 +32,45 @@ console.log(computerNumber)
  
 // ----Second Part----
 
-// function compareNumbers(userNum,computerNum){
-//    while(userNum > computerNum) {
-//         Usernum = parseInt(prompt("Your number is bigger then the computer’s, guess again"));
-//         compareNumbers()
-//     }
-//     if (userNum < computerNum) {
-//        parseInt( prompt("Your number is smaller then the computer’s, guess again"));
-//     }
-
-//     else {
-//     console.log(computerNumber);
-//     alert("WINNER!");
-// }
-//   }
-   
-
 function compareNumbers(userNum,computerNum){
-   while(userNum !== computerNum) {
+   while(userNum > computerNum) {
+        Usernum = parseInt(prompt("Your number is bigger then the computer’s, guess again"));
+        compareNumbers()
+    }
+    if (userNum < computerNum) {
+       parseInt( prompt("Your number is smaller then the computer’s, guess again"));
+    }
 
-         
-
-// if (userNum === computerNum) {
-//     console.log(computerNumber);
-//     alert("WINNER!");
-    
-    if (userNum > computerNum){
-        prompt("Your number is bigger then the computer’s, guess again");
-      
-
-   } else if (userNum < computerNum) {
-       prompt("Your number is smaller then the computer’s, guess again");
- 
-   }   
-}
-if (userNum === computerNum) {
+    else {
     console.log(computerNumber);
     alert("WINNER!");
 }
-}
+  }
+   
+
+// function compareNumbers(userNum,computerNum){
+//    while(userNum !== computerNum) {
+
+         
+
+// // if (userNum === computerNum) {
+// //     console.log(computerNumber);
+// //     alert("WINNER!");
+    
+//     if (userNum > computerNum){
+//         +prompt("Your number is bigger then the computer’s, guess again");
+      
+
+//    } else if (userNum < computerNum) {
+//       + prompt("Your number is smaller then the computer’s, guess again");
+ 
+//    }   
+// }
+// if (userNum === computerNum) {
+//     console.log(computerNumber);
+//     alert("WINNER!");
+// }
+// }
 
 
 
