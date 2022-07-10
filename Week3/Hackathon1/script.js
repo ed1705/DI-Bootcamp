@@ -63,8 +63,8 @@ function j () {
     x = (document.getElementById(box2));
     console.log(box2);
     // x.className +=  " newClassName";
-chosen.push(x)
-console.log(chosen);
+// chosen.push(x)
+
 console.log(box2);
 }
 ;
