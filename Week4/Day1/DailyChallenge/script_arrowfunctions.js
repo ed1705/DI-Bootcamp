@@ -1,4 +1,4 @@
-const gameInfo = [
+rconst gameInfo = [
  {
    username: "john",
    team: "red",
