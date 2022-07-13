@@ -11,13 +11,15 @@ let groceries = {
     }
 }
 
-const displayGroceries = Object.keys(groceries).forEach(fruits => {
-  console.log(groceries["fruits"]);
-});
-
+// const displayGroceries = Object.keys(groceries).forEach(fruits => {
+//   console.log(groceries["fruits"]);
+// });
+const displayGroceries = () => {
+    groceries["fruits"].forEach((fruit) => console.log(fruit));
+}
 
 const cloneGroceries = () => {
- let user = client
+ let user = client;
  client = "Betty"; //no because inside function, out func will see change bec shre same variable
  let shopping = groceries
  let g = groceries.totalPrice = "35$" //yes because its not primitive value
