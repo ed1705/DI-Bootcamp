@@ -9,7 +9,7 @@ let inventory = [
 // let getCarHonda(carInventory)
 function honda () { 
 let x = inventory.find(elem => elem["car_make"] === "Honda");
-let {car_make: a, car_model:b, car_year:c, } = x;
+let {car_make: a, car_model:b, car_year:c,} = x;
 let sent = `This is a ${a} ${b} from ${c}`;
 console.log(sent)
 
