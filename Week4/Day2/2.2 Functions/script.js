@@ -49,85 +49,85 @@
 })("John")
 
 
-//-----------------------------
-// NESTED FUNCTION
-// ----------------------------
+-----------------------------
+NESTED FUNCTION
+----------------------------
 
-// // //---
-// // //Syntax
-// // //---
+// //---
+// //Syntax
+// //---
 
-// The nested (inner) function is private to its containing (outer) function.
+The nested (inner) function is private to its containing (outer) function.
 
-// function outer() {
+function outer() {
 
-//     // private
-//     function inner(){
+    // private
+    function inner(){
     
-//     }
+    }
 
-//     inner()
-// }
+    inner()
+}
 
-// outer()
-// // inner() //not defined because it was created in the local scope
-
-
-// // //---
-// // // Inner function has access to the outer function scope
-// // //---
+outer()
+// inner() //not defined because it was created in the local scope
 
 
-// // // // the outer func : checkName() is going to be ran once
-// // // //the inner func, addExclamation() is going to run 3 times
-// function checkName() {
-//     let name = "John";
-
-//     function addExclamation() {
-//         name += "!";
-//         console.log("in the addExclamation func", 
-//         	name);
-//     };
-
-//     addExclamation(); // in the addExclamation func John!
-//     addExclamation(); // in the addExclamation func John!!
-//     addExclamation(); // in the addExclamation func John!!!
-// }
-
-// checkName(); 
-// // addExclamation(); //not possible
+// //---
+// // Inner function has access to the outer function scope
+// //---
 
 
+// // // the outer func : checkName() is going to be ran once
+// // //the inner func, addExclamation() is going to run 3 times
+function checkName() {
+    let name = "John";
+
+    function addExclamation() {
+        name += "!";
+        console.log("in the addExclamation func", 
+        	name);
+    };
+
+    addExclamation(); // in the addExclamation func John!
+    addExclamation(); // in the addExclamation func John!!
+    addExclamation(); // in the addExclamation func John!!!
+}
+
+checkName(); 
+// addExclamation(); //not possible
 
 
-// // function card (){
-
-// //     function createCard (){
-
-// //     }
-
-// //     function addColor (){
-
-// //     }
-
-// //     function appendPage(){
-
-// //     }
-
-// //     createCard()
-// //     addColor()
-// //     appendPage()
-
-// // }
-
-// // card()
 
 
-// // addExclamation();
+function card (){
 
-// // // ---
-// // // nested functions help break down large functions
-// // // ---
+    function createCard (){
+
+    }
+
+    function addColor (){
+
+    }
+
+    function appendPage(){
+
+    }
+
+    createCard()
+    addColor()
+    appendPage()
+
+}
+
+card()
+
+
+// addExclamation();
+
+// // ---
+// // nested functions help break down large functions
+// // ---
 
 
 // // //-------------------------
@@ -184,4 +184,77 @@ starWars("The Blue Star")
 // let list = ["a", "b", "c"]
 // list.forEach(function (letter){
 //     console.log(letter)
-// })
+// })\
+
+
+
+
+
+
+robot 
+
+
+function addRobotsToPage () {
+  robots.forEach(element => {
+    let nameRobot = element["name"];
+    let emailRobot = element["email"];
+    let imageRobot = element["image"];
+    let idRobot = element["id"];
+
+    appendRobotOnPage(nameRobot, emailRobot, imageRobot, idRobot)
+
+  })
+}
+
+let sectionDOM = document.getElementById("container");
+
+function appendRobotOnPage (nameRobot, emailRobot, imageRobot, idRobot) {
+  //create the elements
+  let divDOM = document.createElement("div");
+  divDOM.classList.add("card");
+  divDOM.setAttribute("id", idRobot)
+  let imageDOM = document.createElement("img");
+  imageDOM.classList.add("imgRobot");
+  let paragraphEmail = document.createElement("p"); 
+  let paragraphName = document.createElement("p"); 
+
+  //fill the elements with data
+  imageDOM.src=imageRobot;
+  let textEmail = document.createTextNode(emailRobot);
+  let textName = document.createTextNode(nameRobot);
+  paragraphEmail.appendChild(textEmail);
+  paragraphName.appendChild(textName);
+
+  //add all the elements to the div
+  divDOM.appendChild(imageDOM);
+  divDOM.appendChild(paragraphEmail);
+  divDOM.appendChild(paragraphName);
+
+  //append the div to the section
+  sectionDOM.appendChild(divDOM)
+}
+
+addRobotsToPage()
+
+
+let searchBar = document.getElementById("search");
+searchBar.addEventListener("input", showLetters);
+
+function showLetters (){
+  console.log(searchBar.value)
+  let valueInput = searchBar.value;
+
+  let robotsIncludingSearchValue = robots.filter(element => 
+    element["name"].toLowerCase().includes(valueInput.toLowerCase())
+  )
+
+  robots.forEach(element => {
+    let elementToErase = document.getElementById(element["id"]);
+      if (!robotsIncludingSearchValue.includes(element)) {
+        let elementToErase = document.getElementById(element["id"]);
+        elementToErase.style.display = "none";
+      } else {
+        elementToErase.style.display = "block";
+      }
+  })
+}

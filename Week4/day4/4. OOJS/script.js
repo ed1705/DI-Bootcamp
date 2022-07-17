@@ -74,7 +74,7 @@ hagridCharacter.createSpell("turn into stone")
 
 // SYNTAX
 class First {
-  constructor(){
+  constructor(title, uploader, time){
     //create attribute
     this.username = "John"
   }
@@ -136,3 +136,6 @@ const smartSamsungTV = new SmartTV("Samsung", 23, 20, false)
 console.log(smartSamsungTV)
 smartSamsungTV.increaseVolume()
     }
+
+
+

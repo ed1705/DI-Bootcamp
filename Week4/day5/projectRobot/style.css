@@ -1,0 +1,117 @@
+@import url('http://fonts.cdnfonts.com/css/chillin');
+
+html,h1,h2,h3,h4,h5,h6,a{
+	font-family: 'CHILLIN', sans-serif;
+}
+
+
+.hide {
+	display: none;
+}
+
+
+header {
+	margin: 0 auto;
+	margin-bottom: 4rem;
+}
+body {
+	background-color: mediumpurple;;
+	margin-left:  12em;
+	margin-right: 12em;
+	background-color: mediumpurple;
+	background-image: url(../projectRobot/imgs/circuit-pattern.png);
+	background-repeat: repeat;
+	/*background-size: contain;*/
+}
+section {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	/*grid-template-columns: repeat(auto-fill, minmax(23vw, 1fr));*/
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
+	margin-top: 1rem;
+/*	background-color: mediumpurple;
+	background-image: url(../projectRobot/imgs/circuit-pattern.png);
+	background-repeat: repeat;
+	background-size: contain;*/
+	/*background-position: center;*/
+}
+
+
+section div {
+	display: flex;
+	flex-direction: column;
+	gap: .25rem;
+}
+
+.hide {
+	display: none;
+}
+
+
+nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	gap: .25rem;
+	background-color: lightcoral;
+	height: 7vh;
+	width: 100%;
+}
+
+.logo {
+	font-size: 1.5rem;
+	display: inline-flex;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+#searchbar {
+	width: 40%;
+	margin: 0.66rem;
+	background-color: lightgrey;
+}
+.card p{ font-size: 1.3rem;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+/*	background-image: url(../projectRobot/imgs/circuit-pattern.png);*/
+}
+
+.card {
+	background-color: cadetblue;
+	border-radius: 1rem;
+
+}
+
+.back {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	background-image: url(../projectRobot/imgs/card-pattern.png);
+
+	/*background-color: mediumaquamarine;*/
+	/*border-radius: 70%;*/
+}
+
+img {
+	/*padding-bottom: 1rem;*/
+	background-color: blueviolet;
+	border-radius: 50%;
+	width: 70%;
+}
+
+.robotStyle {
+	margin:  2em 0em 0em 0em;
+	/*border: black 2px solid;*/
+	font-size: 2px;
+	font-weight: bold;
+}
+.robotstyles {
+	margin:  0;
+	font-weight: 200;
+	font-size: 0.4 em;
+
+}
