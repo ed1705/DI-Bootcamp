@@ -17,14 +17,16 @@ const checkInput = = new Promise ((resolve, reject) => {
 
 	setTimeout(() => {
 	
-	if typeof input === "string"{
-		resolve(input)
+	if (typeof input === "string"){
+		resolve(input.toUpperCase())
 		} else {
-			reject("Low grades")
+			reject(input)
 		}
 	}, 5000)
 
 } }
+
+
 
 inputString.then(repeat => {
 		//the parameter gift is the result of the first promise

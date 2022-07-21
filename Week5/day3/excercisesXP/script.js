@@ -26,7 +26,7 @@ compareToTen(8)
 
  const promise = new Promise((resolve, reject) => {
         setTimeout(() => {
-            promise.resolve([89, 45, 323]);
+            resolve([89, 45, 323]);
         }, 4000);
     });
  
