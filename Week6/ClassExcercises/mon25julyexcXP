@@ -1,0 +1,44 @@
+-- Database: dvdrental
+
+-- DROP DATABASE IF EXISTS dvdrental;
+
+CREATE DATABASE dvdrental
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'C'
+    LC_CTYPE = 'C'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+	
+DVD RENTAl EXERCISES:
+1- 
+select * from customer;
+2- 
+select (first_name, last_name) as full_name from customer;
+3- 
+select distinct create_date from customer;
+4- 
+select * from customer order by first_name desc;
+5- 
+select film_id, title, description, release_year, rental_rate from film order by rental_rate;
+6- 
+select address,phone from address where district='Texas';
+7- 
+select * from film where film_id = 15 or film_id = 150;
+   select film_id, title, description, length, rental_rate from film where film_id = 1 or film_id = 5;
+8- 
+select film_id, title, description, length, rental_rate from film where title in ('Ghostbusters');
+9- 
+select film_id, title, description, length, rental_rate from film where title Ilike ('Gh%');
+10- 
+select film_id, title, rental_rate from film order by rental_rate asc limit 10;
+11- 
+((select film_id, title, rental_rate from film order by rental_rate asc limit 10 offset 10)); 
+    select film_id, title, rental_rate from film order by rental_rate asc offset 10 rows fetch first 10 row only;
+12- 
+select customer.customer_id, first_name, last_name, amount, payment_date from customer inner join payment on payment.customer_id = customer.customer_id order by customer.customer_id;
+
+	
+	
