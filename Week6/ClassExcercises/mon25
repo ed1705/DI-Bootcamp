@@ -64,19 +64,64 @@ VALUES (9369, 'TONY', 'STARK', 'SOFTWARE ENGINEER', 7902, '1980-12-17', 2800,0,2
        (9777, 'MADII', 'HIMBURY', 'ANALYST', 7839, '1981-05-01', 2000, 200, NULL),
        (9860, 'ATHENA', 'WILSON', 'ANALYST', 7839, '1992-06-21', 7000, 100, 50),
        (9861, 'JENNIFER', 'HUETTE', 'ANALYST', 7839, '1996-07-01', 5000, 100, 50);
-	   
+	 -- 1. How many employees are in dept 10.
+SELECT COUNT(*) FROM employee WHERE departmentcode=10;
+​
+-- 16 employees : one employee doesnt work in a dept
+SELECT COUNT(departmentcode) FROM employee;
+-- 17 employees
+SELECT COUNT(*) FROM employee; 
+​
+-- 2. How many employees are analyst in dept 10.
+SELECT COUNT(*) FROM employee WHERE departmentcode=10 AND job ILIKE '%analyst%';
+​
+-- 3. Display the names of each employees, their job and dept location
+-- INNER JOIN to join several tables depending on their relationship
+-- foreign key of one table references the primary key in another table
+SELECT empfname, job,department.location
+FROM employee
+INNER JOIN department
+ON employee.departmentcode=department.deptcode;
+​
+-- 4. Find the avg salary of the software engineers
+SELECT ROUND(AVG(salary),2) FROM employee WHERE job ILIKE '%software%';
+​
+-- 5. Which join should we use to display the employee 9777 even if he has no deptcode?
+SELECT EMPFNAME, deptcode
+FROM employee
+LEFT JOIN department
+ON employee.departmentcode=department.deptcode;
+​
+-- 6. Create a query that displays EMPFNAME, EMPLNAME, Department_code, DEPTNAME, 
+-- LOCATION from EMPLOYEE, and DEPARTMENT tables. 
+-- Make sure the results are in the ascending order based on the EMPFNAME and LOCATION of the department.
+SELECT EMPFNAME, EMPLNAME, departmentcode, DEPTNAME, department.LOCATION
+FROM employee
+INNER JOIN department
+ON employee.departmentcode=department.deptcode
+ORDER BY EMPFNAME, department.LOCATION ASC;
+​
+​
+-- 7.  Display EMPFNAME and "TOTAL SALARY" for each employee (commission and salary)
+SELECT empfname, (salary+commission) as total FROM employee;
+​
+SELECT empfname, SUM(salary+commission) as total FROM employee
+GROUP BY empfname;
+​
+-- 8. Display MAX SALARY from the EMPLOYEE table.
+SELECT MAX(salary) from employee;  
 III. Display DATA
 1. How many employees are in dept 10.
-SELECT COUNT(*) FROM Employee WHERE Department_Code=10;
+SELECT COUNT(*) FROM Employee WHERE Department_Code=10;3
 2. How many employees are analyst in dept 10.
-SELECT COUNT(*) FROM employee WHERE Department_Code=10 AND job='ANALYST';
+SELECT COUNT(*) FROM employee WHERE Department_Code=10 AND job='ANALYST'; (job ILIKE '%analyst%')
 3. Display the names of each employees, their job and dept location
 SELECT EmpFName, Job, Location
 FROM Department
 INNER JOIN Employee 
 ON department.deptcode = employee.Department_code;
 4. Find the avg salary of the software engineers
-SELECT ROUND(AVG(Salary),1)FROM Employee WHERE Job ='SOFTWARE ENGINEER';
+SELECT ROUND(AVG(Salary),2)FROM Employee WHERE Job ='SOFTWARE ENGINEER';
 5. Which join should we use to display the employee 9777 even if he has no deptcode?
 SELECT EMpCOde
 FROM department
@@ -86,7 +131,7 @@ ON employee.DepartmentCode=department.Deptcode;
 SELECT EMPFNAME, EMPLNAME, Department_code, DEPTNAME, LOCATION
 FROM department
 INNER JOIN Employee
-ON DepartmentCode=Deptcode;
+ON Department_Code=Deptcode;
 ORDER BY EmpFName, location;
 
 7.  Display EMPFNAME and "TOTAL SALARY" for each employee (commission and salary)
@@ -94,3 +139,75 @@ SELECT EmpFName, (Salary+Commission) AS Total_Salary FROM Employee
 
 
 8. Display MAX SALARY from the EMPLOYEE table.
+INSERT INTO actors (first_name, last_name, date_birth, number_oscars, nationality)
+VALUES('Angelina', 'Jolie', '1975-06-04', 2, 'American');
+INSERT INTO actors (first_name, last_name, date_birth, number_oscars, nationality)
+VALUES('Emma', 'Watson', '1990-04-15', 0, 'British');
+-- One to One
+-- One person has One TZ
+-- One TZ belongs to ONLY ONE PERSON
+-- One person has One profile
+-- One profile belongs to ONLY ONE PERSON
+-- One to One :  
+-- An actor can own only one car, 
+-- and a car belongs to only one actor
+-- UNIQUE FK
+CREATE TABLE cars (
+  car_id SERIAL PRIMARY KEY,
+  brand VARCHAR(30) NOT NULL,
+  color VARCHAR(30) NOT NULL,
+  owner_id INTEGER UNIQUE REFERENCES actors (actor_id)
+);
+-- SUBQUERIES
+INSERT INTO cars (brand, color, owner_id)
+VALUES('Renault', 'black',(SELECT actor_id FROM actors WHERE first_name='George' AND last_name='Clooney')),
+      ('Mazda', 'red', (SELECT actor_id FROM actors WHERE first_name='Emma' AND last_name='Watson'))
+RETURNING *
+--ERROR
+-- duplicate key value violates unique constraint "cars_test_owner_id_key"
+-- DETAIL:  Key (owner_id)=(2) already exists.
+-- error duplicate key
+INSERT INTO cars (brand, color, owner_id)
+VALUES('Jaguar', 'black',(SELECT actor_id FROM actors WHERE first_name='George' AND last_name='Clooney'));
+-- add some more cars
+INSERT INTO cars (brand, color)
+VALUES('Jaguar', 'yellow'),('BMW', 'pink')
+RETURNING *
+-- Find the car owned by George Clooney
+SELECT last_name, brand
+FROM cars
+INNER JOIN actors
+ON actor_id = owner_id
+WHERE last_name='Clooney';
+-- Find the actors that own a car, and the cars not yet bought
+SELECT first_name, brand
+FROM actors
+RIGHT JOIN cars
+ON actor_id = owner_id;
+-- Using the Emp/Dept database
+-- 1. Create a Boss table with the columns boss_id, boss_name, boss_type (ie.nice, angry, funny ect...),
+-- and dept_number:
+CREATE TABLE boss (
+  boss_id SERIAL PRIMARY KEY,
+  boss_name VARCHAR(50) NOT NULL,
+  boss_type VARCHAR(30) NOT NULL,
+  boss_code INTEGER UNIQUE REFERENCES department (deptcode)
+);
+
+-- The boss table,has a one to one relationship with the department table:
+-- => a department can be managed by only 1 boss, and a boss can manage only 1 department
+-- 1. Add a few bosses : one for the finance dept , one for sales and one for marketing (look for the id of those dept - use subqueries)
+-- 2. What is the type and name of the boss of the dept Finance (show the dept name, not the dept id) (edited) 
+SELECT * FROM department
+
+INSERT INTO boss (boss_name, boss_type,boss_code )
+VALUES ('bob', 'bad', (SELECT deptcode FROM department WHERE deptname = 'FINANCE'));
+SELECT * FROM boss
+INSERT INTO boss (boss_name, boss_type,boss_code )
+VALUES ('joey', 'friendly', (SELECT deptcode FROM department WHERE deptname = 'MARKETING'));
+
+SELECT boss_name, boss_type, deptname
+FROM boss
+INNER JOIN department
+ON boss_code = deptcode
+WHERE deptname = 'FINANCE';

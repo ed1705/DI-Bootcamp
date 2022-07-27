@@ -1,0 +1,88 @@
+-- Database: dvdrental
+
+-- DROP DATABASE IF EXISTS dvdrental;
+
+CREATE DATABASE dvdrental
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'C'
+    LC_CTYPE = 'C'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+	
+	
+	 ExercisesXPW6D3
+	 
+	 
+	 SELECT* FROM FILM
+	1.  SELECT name FROM language
+	2. select title, name from film join language on film.language_id = language.language_id
+	select title, name from film left join  language on film.language_id = language.language_id
+	select title, name from film right join language on film.language_id = language.language_id
+	select title, name from film full join language on film.language_id = language.language_id
+	
+	3.
+	CREATE TABLE new_film( 
+  new_film_id serial PRIMARY KEY, 
+  film_id integer NOT NULL ,  
+  name varchar (50) NOT NULL 
+); 
+INSERT INTO new_film(film_id, name) VALUES(4, 'the big maverick')
+
+ SELECT* FROM new_film
+4.
+CREATE TABLE customer_review( 
+  review_id serial PRIMARY KEY NOT NULL,
+  film_id integer NOT NULL REFERENCES new_film(new_film_id) ON DELETE CASCADE,
+  language_id integer REFERENCES language(language_id) ON DELETE CASCADE, 
+  title varchar (50) NOT NULL, 
+  score integer CHECK (score <= 10),
+  review_text	varchar (550) NOT NULL,									   
+  last_update date DEFAULT now() 
+);
+
+INSERT  INTO  customer_review  (film_id,  language_id,  title,  score, review_text)  VALUES  (1,  1,  'top gun', 9, 'classical movie');
+INSERT  INTO  customer_review  (film_id,  language_id,  title,  score, review_text)  VALUES  (2,  1,  'top gun maverick', 7, 'classical part 2 movie');
+6. just deleted top gun
+DELETE FROM new_film
+WHERE film_id = 1;
+ SELECT* FROM customer_review 
+ 
+ 🌟 Exercise 2 : DVD Rental
+ 1
+UPDATE film SET language_id = '3' WHERE film_id = 120; 
+UPDATE film SET language_id = '4' WHERE film_id > 1 AND film_id < 115;
+ 2. none 
+  SELECT* FROM customer
+ 
+ 3.was easy and ddint effect any other tables
+ DROP TABLE customer_review;
+ SELECT* FROM customer_review 
+  SELECT* FROM new_film
+ 4
+ select COUNT(*) from rental WHERE return_date IS NULL
+ 6
+ SELECT  title  FROM  film  FULL JOIN  film_actor  ON  film_actor.film_id=film.film_id  WHERE  fulltext  @@
+to_tsquery('sumo') AND actor_id = (SELECT actor_id FROM actor WHERE first_name = 'Penelope' AND
+last_name = 'Monroe');
+
+SELECT  title  FROM  film  FULL JOIN  film_category  ON  film.film_id  =  film_category.film_id  WHERE
+category_id = 6 AND length < 60 AND rating = 'R';
+
+SELECT film.title FROM rental JOIN customer ON rental.customer_id = customer.customer_id FULL JOIN payment
+ON  rental.rental_id  =  payment.rental_id  JOIN  inventory  ON  rental.inventory_id  =
+inventory.inventory_id JOIN film ON inventory.film_id = film.film_id WHERE customer.first_name
+=  'Matthew'  AND  customer.last_name  =  'Mahan'  AND  rental.return_date  <  '2005-08-01'  AND
+rental.return_date > '2005-07-28' AND payment.amount > 4;
+
+SELECT  title FROM  rental  FULL JOIN  customer  ON
+rental.customer_id  =  customer.customer_id  FULL JOIN  inventory  ON  rental.inventory_id  =
+inventory.inventory_id WHERE customer.first_name =  'Matthew'  AND  customer.last_name  =  'Mahan' 
+
+
+
+
+ 
+ 
