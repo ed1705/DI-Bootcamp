@@ -24,3 +24,41 @@ let products = [
             price: 399.99
         }
     ];
+
+// 4. The user clicks on the item to add them to his cart. The cart is an array of items, saved in the localstorage. Each item is an object containing the name of the product and the price.
+    (()=>{
+     console.log(products)
+      for(i=0; i< products.length; i++) {
+        let container = document.getElementById("container");
+        let adiv = document.createElement('div')
+        let productNm =  document.createElement("h3");
+        let productprc = document.createElement("h4");
+        let productImg = document.createElement("img");
+        let productBtn = document.createElement("button");
+    
+      let infor = document.createTextNode(products[i].name);
+      productNm.appendChild(infor);
+
+      let showPrice = document.createTextNode(products[i].price);
+      productprc.appendChild(showPrice);
+
+
+        productImg.setAttribute("src", products[i]["url"]);
+        productImg.setAttribute("alt", products[i]["name"]);
+        // productImg.appendChild(products[i]["url"]);
+ let btninfo = document.createTextNode(`Buy ${products[i].name}`);
+  productBtn.appendChild(btninfo);
+adiv.appendChild(productNm);
+adiv.appendChild(productprc);
+adiv.appendChild(productImg);
+adiv.appendChild(productBtn);
+container.appendChild(adiv);
+
+
+
+
+    //  // adiv.appendChild(infor);
+    //  document.getElementById('container').appendChild(adiv);
+    }
+
+    })()

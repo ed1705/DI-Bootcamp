@@ -86,6 +86,8 @@ function displayData (results) {
 	})
 }
 
+
+
 // fetch(`https://api.sunrise-sunset.org/json?lat=${latitudeParis}&lng=${longitudeParis}&date=today`)
  
 
