@@ -15,7 +15,7 @@ arr[1]
     ```javascript
     let arrNums = [1, 2, 3, 4, 5];
     ```
-<!-- An array with nothing . starts at '3'and adds or deletes nothing to new array -->
+An array with nothing . starts at '3'and adds or deletes nothing to new array
 
 3. What is the result of the following code :
 
@@ -41,7 +41,7 @@ const all = [4, 5, 6, 1,2,3,7,8,9];
    golf.clubs.high_end = "callaway";
    console.log(golf.clubs.high_end);
    ```
-<!--    I think callaway because creates new reference point in the memory because global variable changed it outside function... -->
+   I think callaway because creates new reference point in the memory because global variable changed it outside function...
 
 
 5. Can we define the function as follows? If yes, what is it called, and explain how to invoke it.
@@ -51,7 +51,7 @@ const all = [4, 5, 6, 1,2,3,7,8,9];
        return a*b;
     }
     ```
-<!-- invoke it after the function not before by const(x) ,... function expression -->
+invoke it after the function not before by const(x) ,... function expression
 
 6. Variables created **without** any keyword, are always global, even if they are created inside a function ? Yes or No and explain
 
@@ -60,7 +60,7 @@ const all = [4, 5, 6, 1,2,3,7,8,9];
     	a = 5;
     }
     ```
-<!-- I remember reading its always global but this one doesnt seem to work because cant console.log a (undefined) ???????????? -->
+I remember reading its always global but this one doesnt seem to work because cant console.log a (undefined) ????????????
 #### Functions
 
 7. In JavaScript can we pass functions as arguments to other functions? What does this code return ?
@@ -101,13 +101,15 @@ const all = [4, 5, 6, 1,2,3,7,8,9];
      }
      console.log(foo());
      ```
-<!--  function bar is a nested function and is read first , it returns bar()  which is poppin bottles which gets passed into foo(). so answer is poppin bottles--> inner function can work with outer function even though not global??
+  function bar is a nested function and is read first , it returns bar()  which is poppin bottles which gets passed into foo(). so answer is poppin bottles 
+inner function can work with outer function even though not global??
 #### DOM
 
 10. Which of the following events will you add in the `addEventListener()`method? 
       ☐ click
       ☐ onclick
-<!-- click -->
+
+click
 11. Does the `addEventListener()` method allow you to add many events to the same element?
 
     ```javascript
@@ -115,7 +117,8 @@ const all = [4, 5, 6, 1,2,3,7,8,9];
     x.addEventListener("click", func2);
     x.addEventListener("mouseout", func3);`
     ```
-<!-- yes i think so -->
+yes i think so
+
 12. DOM exercise
 
       1. Part I : Create a button in your HTML page, when the user will click the the button a paragraph will be added on the DOM with the content "New Paragraph". Use arrow functions
@@ -214,7 +217,9 @@ corect
         console.log(data)
       })
     ```
-<!-- I think it is fulfilled straight away which close it down straight away. so all then. 's dont do anything Not SURE WHY SUCCESS DOESNT SHOW in console???? OH IT DOES SHOW SUCCESS -->
+I think it is fulfilled straight away which close it down straight away. so all then. 's dont do anything Not SURE WHY SUCCESS DOESNT SHOW in console???? OH IT DOES SHOW SUCCESS
+
+
 22. What log will be made by the following code, after 2 seconds?
 
     ```javascript
@@ -228,7 +233,7 @@ corect
        console.log(data);
     });
     ```
-<!-- resolve OK after 2 seconds and I think (data ) before 2 sec -->
+resolve OK after 2 seconds and I think (data ) before 2 sec
 
 23. Consider the following async function and its output. What will be displayed to the console when calling the `f()` function? Explain the process
 
@@ -247,8 +252,8 @@ corect
     f();
     ```
 
-<!--     result is a variable - first .. but it is changed after 1 second by the promise and only triggers 'done' and not first because result had to wait for the promise to be fulfilled. so at the point ofr console.log it awaited the promise which was a success after 1 second. 
- -->
+    result is a variable - first .. but it is changed after 1 second by the promise and only triggers 'done' and not first because result had to wait for the promise to be fulfilled. so at the point ofr console.log it awaited the promise which was a success after 1 second. 
+
 24. Use async await, and fetch a fact on cats and display it `https://catfact.ninja/fact`
     1. Create 2 functions : one to fetch data from API, the other one to display it on the page using the DOM
     2. Make sure to use try and catch
