@@ -1,28 +1,28 @@
-// 	let x =	document.getElementById("btn")
-// 	console.log(btn)
+	// let btn =	document.getElementById("btn");
+ 
+	// console.log(btn)
 		
-
-// console.log(x)
-// 		const func1 = () => {
-// 			let newDiv = document.createElement("div");
-// 			let newP = document.createElement("p");
-// 			let text = document.createTextNode(`New Paragraph`);
-// 	        newP.appendChild(text);
-// 	        newDiv.appendChild(newP);
-// 		}
+	// 	const func1 = () => {
+	// 		let newDiv = document.createElement("div");
+	// 		let newP = document.createElement("p");
+	// 		let text = document.createTextNode(`New Paragraph`);
+	//         newP.appendChild(text);
+	//         newDiv.appendChild(newP);
+ //            document.body.appendChild(newDiv)
+	// 	}
 
 	       
-//  x.addEventListener("click", func1);
-// func1()
+ // btn.addEventListener("click", func1);
+
 
 
 let btn = document.getElementById("btn")
-btn.addEventListener("click", displayAll)
+
 
 async function retrieveCat () {
 
    try {
-    const url= (`https://catfact.ninja/fact`)
+    const url= ("https://catfact.ninja/fact")
     const result = await fetch(url);
     console.log(result);
 
@@ -37,7 +37,7 @@ async function retrieveCat () {
     }
 }
 
+btn.addEventListener("click", retrieveCat);
+ // function displayAll() {
 
- function displayAll() {
-
- }
+ // }
