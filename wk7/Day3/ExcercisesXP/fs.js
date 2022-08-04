@@ -45,10 +45,10 @@
 
 // deleting a file
 
-let fs = require('fs');
-fs.unlink('test.txt', function (err) {
-    console.log('write operation complete.');
-});
+// let fs = require('fs');
+// fs.unlink('test.txt', function (err) {
+//     console.log('write operation complete.');
+// });
 
 
 
