@@ -1,7 +1,7 @@
 /*
 1. npm init -y - package.json
 2. express - npm i express
-3. nodemon- live server - dev mode
+3. nodemon- live senpm i rver - dev mode
 4. const express = require('express');
 5. init express
 6. create routes
