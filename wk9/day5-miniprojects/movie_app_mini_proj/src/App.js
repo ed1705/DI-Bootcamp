@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react"
+import "./App.css"
 
 function App() {
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    fetch("https://products-api-shop.herokuapp.com/api")
+      .then((res) => res.json())
+      .then((data) => {
+        setProducts(data)
+      })
+      .catch((e) => {
+        console.log(e)
+      })
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {products.map((item) => {
+          return (
+            <div
+              key={item.id}
+              style={{
+                display: "inline-block",
+                padding: "25px",
+                margin: "20px",
+              }}
+            >
+              <h4>{item.name}</h4>
+              <h5>{item.price}</h5>
+            </div>
+          )
+        })}
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
